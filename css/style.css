@@ -1,6 +1,14 @@
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 body {
-    background-color: #1a202c;
     color: #a0aec0;
+    background: linear-gradient(-45deg, #1a202c, #2d3748, #4a5568, #2d3748);
+    background-size: 400% 400%;
+    animation: gradient-animation 15s ease infinite;
 }
 
 .glass-card {
@@ -10,11 +18,12 @@ body {
     border-radius: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .glass-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .fade-in-section {
